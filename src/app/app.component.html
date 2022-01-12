@@ -1,0 +1,32 @@
+<p>
+  <mat-toolbar color="primary">
+    <button routerLink="/overview" mat-icon-button class="">
+      Home
+    </button>
+    <span class="example-spacer"></span>
+    <button routerLink="/article-creation" mat-icon-button>
+      Create Blogpost
+    </button>
+    <span class="example-spacer"></span>
+    <button routerLink="/stats" mat-icon-button>
+      Stats
+    </button>
+    <span class="example-spacer"></span>
+    <button routerLink="/payout" mat-icon-button>
+      Payout
+    </button>
+  </mat-toolbar>
+</p>
+<mat-grid-list class="full-all" cols="6" rowHeight="fit">
+  <mat-grid-tile></mat-grid-tile>
+
+      <mat-grid-tile colspan="4">
+        <mat-card>
+          <mat-card-content>
+        <router-outlet></router-outlet>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
