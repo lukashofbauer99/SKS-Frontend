@@ -1,0 +1,27 @@
+<form class="article-form">
+  <b><h2 color="primary">Blog entry:</h2></b>
+  <table class="full-width" cellspacing="0"><tr>
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input matInput disabled value="{{blogPost.author.firstName}} {{blogPost.author.lastName}}">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Sight</mat-label>
+        <input matInput disabled value="{{blogPost.sight.name}}">
+      </mat-form-field>
+    </td>
+  </table>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Headline</mat-label>
+    <input matInput disabled value="{{blogPost.headline}}">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Blog entry</mat-label>
+    <textarea matInput placeholder="..." disabled>{{blogPost.fullText}}</textarea>
+  </mat-form-field>
+
+</form>

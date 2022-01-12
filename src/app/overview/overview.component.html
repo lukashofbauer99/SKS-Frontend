@@ -1,0 +1,10 @@
+
+<mat-selection-list #blogPostslist [multiple]="false" class="full-width">
+  <b><h2>Blogposts:</h2></b>
+  <mat-list-option routerLink="/article/{{blogPost.id}}"  *ngFor="let blogPost of blogPosts" [value]="blogPost">
+      <div color="primary" >
+        {{blogPost.headline}}
+      </div>
+  </mat-list-option>
+</mat-selection-list>
+

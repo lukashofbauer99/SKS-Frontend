@@ -1,0 +1,38 @@
+<form [formGroup]="articleForm" novalidate class="article-form" >
+  <b><h2 color="primary">Create blog entry:</h2></b>
+  <table class="full-width" cellspacing="0"><tr>
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <mat-select [formControl]="authorFormControl" required>
+          <mat-option *ngFor="let author of authors" [value]="author" >
+            {{author.firstName}} {{author.lastName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Sight</mat-label>
+        <mat-select [formControl]="sightFormControl" required>
+          <mat-option *ngFor="let sight of sights" [value]="sight">
+            {{sight.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </table>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Headline</mat-label>
+    <input matInput placeholder="..." [formControl]="headLineFormControl" required>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Blog entry</mat-label>
+    <textarea matInput placeholder="..." [formControl]="fullTextFormControl"></textarea>
+  </mat-form-field>
+
+  <mat-card-actions>
+    <button routerLink="/overview" [disabled]="!articleForm.valid" type="button" (click)="Submit()" class="full-width" mat-raised-button color="primary">Submit</button>
+  </mat-card-actions>
+</form>

@@ -1,0 +1,7 @@
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input [(ngModel)]="date" (ngModelChange)="loadSights()" matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<div style="width: 100%; min-height: 500px; min-width: 500px" echarts [options]="options" class="demo-chart"></div>
