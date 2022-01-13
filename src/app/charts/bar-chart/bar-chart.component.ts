@@ -62,12 +62,7 @@ export class BarChartComponent implements OnInit {
   }
 
   private addSight(sight: Sight, views: number) {
-    let value: number = views;
-    let contactName: String = sight.name;
-
-    let dataPoint: any = this.chartData.find(dp => dp.name === contactName);
-
-    this.map.set(contactName.toString(), value);
+    this.map.set(sight.name.toString(), views);
   }
 
   private setOptions() {
@@ -80,6 +75,7 @@ export class BarChartComponent implements OnInit {
         type: 'category',
         data: Array.from(this.map.keys())
       },
+
       yAxis: {
         type: 'value',
         axisLabel: {
@@ -88,7 +84,13 @@ export class BarChartComponent implements OnInit {
       },
       series: [{
         data: Array.from(this.map.values()),
-        type: 'bar'
+        type: 'bar',
+        label: {
+          normal: {
+            show: true,
+            position: 'top'
+          }
+        }
       }]
     };
   }
